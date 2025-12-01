@@ -1,11 +1,15 @@
-{
-  "name": "l2",
+﻿{
+  "name": "lesson3",
   "version": "1.0.0",
-  "description": "ll2",
+  "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.0"
+  }
 }

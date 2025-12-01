@@ -1,20 +1,27 @@
-const http=require("http");
-http.createServer((req, res) => {
-    if (req.url === "/") {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.write(JSON.stringify({ message: "hello world" }));
-    } else if (req.url === "/about") {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.write(JSON.stringify({ message: "About us" }));
-    } else if (req.url === "/services") {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.write(JSON.stringify({ message: "Our services" }));
-    } else {
-        res.writeHead(404, { 'Content-Type': 'application/json' });
-        res.write(JSON.stringify({ error: "Page not found" }));
-    }
-    res.end();
-}).listen(3000, () => {
-    console.log("Server is running on http://localhost:3000");
+﻿const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res)=>{
+    res.status(200);
+    res.send("Welcome to root URL of Server");
 });
 
+app.get('/books', (req, res)=>{
+    const books = require('./books.json');
+    res.status(200);
+    res.json(books);
+});
+app.get('/writer', (req, res)=>{
+    const authors = require('./authors.json');
+    res.status(200);
+    res.json(authors);
+});
+app.get('/users', (req, res)=>{
+    const users = require('./users.json');
+    res.status(200);
+    res.json(users);
+});
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+});
