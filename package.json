@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "lesson3",
   "version": "1.0.0",
   "description": "",
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^2.2.1",
     "express": "^5.2.0"
   }
 }
